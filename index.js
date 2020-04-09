@@ -1,10 +1,12 @@
 require('dotenv').config()
 const express = require('express')
 const nodemailer = require('nodemailer')
+const cors = require("cors")
 
 const server = express()
 
 server.use(express.json())
+server.use(cors())
 
 server.post('/', (req,res)=>{
     const message = req.body
